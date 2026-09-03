@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Jutsu from './jiraya.tsx';
+import Jutsu from './components/jiraya.tsx';
 
 function App(){
   return(
