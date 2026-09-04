@@ -1,0 +1,403 @@
+/* Pro Siga — Landing Page
+   Fontes: Sora (títulos) + Inter (texto). Importe no seu index.html ou aqui via @import. */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+.pro-siga {
+  --navy: #16213e;
+  --navy-light: #22315c;
+  --accent: #6f9bd6;
+  --accent-strong: #4a7ec2;
+  --bg: #f6f9fd;
+  --surface: #ffffff;
+  --border: #e6ebf3;
+  --text: #182136;
+  --text-muted: #5c6478;
+
+  --font-display: 'Sora', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.pro-siga * {
+  box-sizing: border-box;
+}
+
+.pro-siga__container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header ---------- */
+
+.pro-siga__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.pro-siga__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--navy);
+}
+
+.pro-siga__brand-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--navy);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+}
+
+.pro-siga__nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pro-siga__btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pro-siga__btn:hover {
+  transform: translateY(-1px);
+}
+
+.pro-siga__btn:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+.pro-siga__btn--primary {
+  background: var(--navy);
+  color: #ffffff;
+}
+
+.pro-siga__btn--primary:hover {
+  box-shadow: 0 8px 20px rgba(22, 33, 62, 0.25);
+}
+
+.pro-siga__btn--ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--navy);
+}
+
+.pro-siga__btn--ghost:hover {
+  border-color: var(--navy);
+}
+
+/* ---------- Hero ---------- */
+
+.pro-siga__hero {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+  align-items: center;
+  padding: 32px 24px 64px;
+  max-width: 1120px;
+  margin: 0 auto;
+  animation: pro-siga-rise 0.7s ease-out both;
+}
+
+.pro-siga__hero-art {
+  background: var(--surface);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 45px -25px rgba(22, 33, 62, 0.35);
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  min-height: 280px;
+}
+
+.pro-siga__hero-art .pro-siga__mascot {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.pro-siga__eyebrow-free-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  line-height: 1.18;
+  color: var(--navy);
+  margin: 0 0 18px;
+}
+
+.pro-siga__eyebrow-free-heading em {
+  font-style: normal;
+  color: var(--accent-strong);
+}
+
+.pro-siga__hero-copy p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 46ch;
+  margin: 0 0 28px;
+}
+
+/* ---------- Trust / testimonial band ---------- */
+
+.pro-siga__trust {
+  background: var(--navy);
+  padding: 56px 24px 88px;
+  text-align: center;
+}
+
+.pro-siga__trust-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: #ffffff;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  max-width: 620px;
+  margin: 0 auto 40px;
+}
+
+.pro-siga__testimonials {
+  max-width: 960px;
+  margin: 0 auto -140px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.pro-siga__testimonial {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 20px 18px;
+  text-align: left;
+  box-shadow: 0 18px 30px -20px rgba(0, 0, 0, 0.3);
+}
+
+.pro-siga__testimonial-person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.pro-siga__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--navy-light));
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.pro-siga__testimonial-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.pro-siga__testimonial-role {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.pro-siga__testimonial-quote {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ---------- Features ---------- */
+
+.pro-siga__features {
+  padding: 200px 24px 80px;
+  max-width: 1120px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pro-siga__features-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  color: var(--navy);
+  max-width: 640px;
+  margin: 0 auto 16px;
+  line-height: 1.25;
+}
+
+.pro-siga__features-heading em {
+  font-style: normal;
+  color: var(--accent-strong);
+}
+
+.pro-siga__features-sub {
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto 48px;
+}
+
+.pro-siga__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.pro-siga__card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 32px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.pro-siga__card .pro-siga__mascot {
+  width: 100%;
+  max-width: 210px;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.pro-siga__card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin: 0 0 10px;
+}
+
+.pro-siga__card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.pro-siga__features-cta {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- Footer ---------- */
+
+.pro-siga__footer {
+  background: var(--navy);
+  padding: 40px 24px;
+  margin-top: 40px;
+}
+
+.pro-siga__footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pro-siga__footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.pro-siga__footer-copy {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+}
+
+/* ---------- Motion ---------- */
+
+@keyframes pro-siga-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pro-siga__hero {
+    animation: none;
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .pro-siga__hero {
+    grid-template-columns: 1fr;
+    padding-top: 8px;
+  }
+
+  .pro-siga__testimonials {
+    grid-template-columns: 1fr;
+    margin-bottom: -60px;
+  }
+
+  .pro-siga__features {
+    padding-top: 100px;
+  }
+
+  .pro-siga__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .pro-siga__header {
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .pro-siga__nav {
+    width: 100%;
+  }
+
+  .pro-siga__btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .pro-siga__footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

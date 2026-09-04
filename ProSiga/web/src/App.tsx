@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Jutsu from './components/jiraya.tsx';
+import LandingPage from './components/LandingPage.tsx';
 
 function App(){
   return(
     <>
-    <Jutsu />
+    <LandingPage />
     </>
   )
 }
