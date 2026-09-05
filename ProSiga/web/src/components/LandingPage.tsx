@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import type { FC } from 'react';
 import './LandingPage.css';
@@ -164,12 +165,12 @@ const LandingPage: FC = () => {
             </a>
           </div>
           <div className="pro-siga__nav-actions">
-            <button type="button" className="pro-siga__btn pro-siga__btn--ghost">
+            <Link to="entrar" className="pro-siga__btn pro-siga__btn--ghost" style={{ textDecoration: 'none' }}>
               Entrar
-            </button>
-            <button type="button" className="pro-siga__btn pro-siga__btn--primary">
+            </Link>
+          <Link to="criar-conta" className="pro-siga__btn pro-siga__btn--primary" style={{ textDecoration: 'none' }}>
               Criar conta
-            </button>
+          </Link>
           </div>
         </nav>
       </header>
@@ -191,23 +192,9 @@ const LandingPage: FC = () => {
               O Pro Siga organiza tarefas, recados e atualizações da rotina acadêmica em um
               único lugar, com acesso simples para quem ensina e para quem aprende.
             </p>
-            <button type="button" className="pro-siga__btn pro-siga__btn--primary">
+            <Link to="criar-conta" className="pro-siga__btn pro-siga__btn--primary" style={{ textDecoration: 'none'}}>
               Experimente já
-            </button>
-            <dl className="pro-siga__hero-stats">
-              <div className="pro-siga__stat">
-                <dt>500+</dt>
-                <dd>turmas ativas</dd>
-              </div>
-              <div className="pro-siga__stat">
-                <dt>12 mil</dt>
-                <dd>alunos conectados</dd>
-              </div>
-              <div className="pro-siga__stat">
-                <dt>98%</dt>
-                <dd>de satisfação</dd>
-              </div>
-            </dl>
+            </Link>
           </div>
         </section>
 
@@ -359,9 +346,9 @@ const LandingPage: FC = () => {
           <div className="pro-siga__final-cta-copy">
             <h2>Pronto para simplificar a rotina da sua escola?</h2>
             <p>Crie sua conta gratuita e configure a primeira turma em poucos minutos.</p>
-            <button type="button" className="pro-siga__btn pro-siga__btn--primary">
+            <Link to="criar-conta" className="pro-siga__btn pro-siga__btn--primary" style={{ textDecoration: 'none'}}>
               Criar conta gratuita
-            </button>
+            </Link>
           </div>
           <Mascot
             variant="aluno"
