@@ -44,7 +44,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 'mateus',
-    name: 'Mateus Torres',
+    name: 'Matheus Terra',
     role: 'Coordenador pedagógico',
     quote: 'A comunicação com as famílias ficou muito mais simples.',
     initials: 'MT',
@@ -179,7 +179,7 @@ const LandingPage: FC = () => {
         <section className="pro-siga__hero">
           <div className="pro-siga__hero-art">
             <Mascot
-              variant="hero"
+              variant="confused"
               className="pro-siga__mascot"
               title="Mascote do Pro Siga cercado por interrogações, representando dúvidas do dia a dia acadêmico"
             />
@@ -274,7 +274,7 @@ const LandingPage: FC = () => {
           <div className="pro-siga__cards">
             <article className="pro-siga__card">
               <Mascot
-                variant="professor"
+                variant="teacher"
                 className="pro-siga__mascot"
                 title="Mascote do Pro Siga na versão do professor, segurando anotações"
               />
@@ -283,7 +283,7 @@ const LandingPage: FC = () => {
             </article>
             <article className="pro-siga__card">
               <Mascot
-                variant="aluno"
+                variant="happy"
                 className="pro-siga__mascot"
                 title="Mascote do Pro Siga na versão do aluno, com uma notificação no celular"
               />
@@ -351,7 +351,7 @@ const LandingPage: FC = () => {
             </Link>
           </div>
           <Mascot
-            variant="aluno"
+            variant="happy"
             className="pro-siga__mascot pro-siga__final-cta-mascot"
             title="Mascote do Pro Siga acenando, convidando para criar uma conta"
           />

@@ -543,7 +543,7 @@
 .pro-siga__faq {
   padding: 80px var(--side-pad);
   max-width: var(--content-max);
-  margin: 0 auto;
+  margin:  auto;
 }
  
 .pro-siga__faq-grid {
@@ -592,7 +592,7 @@
   flex-shrink: 0;
   width: 26px;
   height: 26px;
-  border-radius: 50%;
+  border-radius: 40%;
   background: var(--bg);
   color: var(--navy);
   display: grid;
@@ -640,7 +640,9 @@
  
 .pro-siga__final-cta-mascot {
   width: 100%;
-  max-width: 160px;
+  max-width: 260px;
+  height: auto;
+  aspect-ratio: 1 / 1;
   justify-self: end;
   transform: scaleX(-1);
 }
