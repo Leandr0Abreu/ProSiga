@@ -56,6 +56,13 @@ const testimonials: Testimonial[] = [
     quote: 'Consigo acompanhar cada turma sem me perder em planilhas.',
     initials: 'AS',
   },
+    {
+    id: 'leandro',
+    name: 'Leandro Abreu',
+    role: 'Professor de computação',
+    quote: 'Lançar as atividades nunca esteve mais fácil.',
+    initials: 'LA',
+  },
 ];
 
 const features: Feature[] = [
@@ -208,22 +215,32 @@ const LandingPage: FC = () => {
               alunos e famílias.
             </p>
           </div>
-          <ul className="pro-siga__testimonials">
-            {testimonials.map((person) => (
-              <li key={person.id} className="pro-siga__testimonial">
+        <ul className="pro-siga__testimonials">
+            {testimonials.map((person, index) => (
+              <li
+                key={person.id}
+                className={`pro-siga__testimonial ${
+                  index === testimonials.length - 1 ? 'pro-siga__testimonial--last' : ''
+                }`}
+              >
                 <div className="pro-siga__testimonial-person">
                   <span className="pro-siga__avatar" aria-hidden="true">
                     {person.initials}
                   </span>
+
                   <div>
                     <p className="pro-siga__testimonial-name">{person.name}</p>
                     <p className="pro-siga__testimonial-role">{person.role}</p>
                   </div>
                 </div>
-                <p className="pro-siga__testimonial-quote">&ldquo;{person.quote}&rdquo;</p>
+
+                <p className="pro-siga__testimonial-quote">
+                  &ldquo;{person.quote}&rdquo;
+                </p>
               </li>
             ))}
           </ul>
+
         </section>
 
         <section className="pro-siga__section" id="recursos" aria-labelledby="pro-siga-features-title">

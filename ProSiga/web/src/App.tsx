@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LandingPage from './components/LandingPage.tsx';
 import Account from './components/Account.tsx';
 import Login from './components/Login.tsx';
+import SignUp from './components/SignUp.tsx';
 
 function App(){
   return(
@@ -10,6 +11,7 @@ function App(){
         <Route path="/" element={<LandingPage />} />
         <Route path="/criar-conta" element={<Account />} />
         <Route path="/entrar" element={<Login />} />
+        <Route path="/cadastro" element={<SignUp />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
     </BrowserRouter>

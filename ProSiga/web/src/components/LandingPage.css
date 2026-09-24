@@ -158,6 +158,8 @@
 .pro-siga__inline-link:hover {
   text-decoration: underline;
 }
+
+
  
 /* ---------- Hero ---------- */
  
@@ -287,7 +289,7 @@
   margin: 0 auto -140px;
   padding: 0 var(--side-pad);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 2fr);
   gap: 20px;
 }
  
