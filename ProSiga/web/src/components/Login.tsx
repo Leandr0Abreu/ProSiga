@@ -38,13 +38,10 @@ const Login: FC = () => {
       <header className="login-header">
         <Link to="/" className="login-brand" aria-label="ProSiga - página inicial">
           <img src={logoMark} alt="" className="login-brand__logo" />
-          <span>Pro Siga</span>
+          <span>ProSiga</span>
         </Link>
 
         <nav className="login-nav" aria-label="Navegação principal">
-          <Link to="/">Início</Link>
-          <a href="#sobre">Sobre</a>
-          <a href="#ajuda">Ajuda</a>
         </nav>
       </header>
 
@@ -138,7 +135,7 @@ const Login: FC = () => {
       </main>
 
       <footer className="login-footer" id="ajuda">
-        <span><strong>ProSiga</strong> © 2026 Todos os direitos reservados.</span>
+        <span className="login-footer__brand"><img src={logoMark} alt="" /><strong>ProSiga</strong> © 2026 Todos os direitos reservados.</span>
         <span className="login-footer__links"><a href="#termos">Termos de Uso</a><a href="#privacidade">Política de Privacidade</a><a href="#suporte">Suporte Técnico</a></span>
       </footer>
     </div>

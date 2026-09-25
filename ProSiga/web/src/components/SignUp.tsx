@@ -29,8 +29,7 @@ const SignUp = () => {
   return (
     <div className="signup-page">
       <header className="signup-header">
-        <Link to="/" className="signup-brand"><span className="signup-brand__mark"><img src={logoMark} alt="" /></span>Pro Siga</Link>
-        <nav className="signup-nav"><Link to="/">Início</Link><a href="#sobre">Sobre</a><a href="#ajuda">Ajuda</a></nav>
+        <Link to="/" className="signup-brand"><span className="signup-brand__mark"><img src={logoMark} alt="" /></span>ProSiga</Link>
       </header>
 
       <main className="signup-main">
@@ -69,6 +68,11 @@ const SignUp = () => {
           </div>
         </section>
       </main>
+
+      <footer className="signup-footer" id="ajuda">
+        <span className="signup-footer__brand"><img src={logoMark} alt="" /><strong>ProSiga</strong> © 2026 Todos os direitos reservados.</span>
+        <span className="signup-footer__links"><a href="#termos">Termos de Uso</a><a href="#privacidade">Política de Privacidade</a><a href="#suporte">Suporte Técnico</a></span>
+      </footer>
     </div>
   );
 };

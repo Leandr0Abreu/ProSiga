@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 import './LandingPage.css';
 import Mascot from './Mascot';
 import Icon from './Icon';
@@ -31,7 +31,7 @@ interface Step {
 interface FaqItem {
   id: string;
   question: string;
-  answer: string;
+  answer: ReactNode;
 }
 
 const testimonials: Testimonial[] = [
@@ -43,7 +43,7 @@ const testimonials: Testimonial[] = [
     initials: 'HS',
   },
   {
-    id: 'mateus',
+    id: 'matheus',
     name: 'Matheus Terra',
     role: 'Coordenador pedagógico',
     quote: 'A comunicação com as famílias ficou muito mais simples.',
@@ -60,7 +60,7 @@ const testimonials: Testimonial[] = [
     id: 'leandro',
     name: 'Leandro Abreu',
     role: 'Professor de computação',
-    quote: 'Lançar as atividades nunca esteve mais fácil.',
+    quote: 'Lançar as atividades nunca esteve tão fácil.',
     initials: 'LA',
   },
 ];
@@ -125,14 +125,14 @@ const steps: Step[] = [
 const faqItems: FaqItem[] = [
   {
     id: 'celular',
-    question: 'O Pro Siga funciona no celular?',
+    question: 'O ProSiga funciona no celular?',
     answer:
       'Sim. A plataforma se adapta a qualquer tela, e alunos, professores e responsáveis recebem notificações direto no celular.',
   },
   {
     id: 'instalacao',
     question: 'Preciso instalar algum programa?',
-    answer: 'Não. O Pro Siga funciona pelo navegador, sem instalação e sem ocupar espaço no aparelho.',
+    answer: 'Não. O ProSiga funciona pelo navegador, sem instalação e sem ocupar espaço no aparelho.',
   },
   {
     id: 'tamanho',
@@ -142,7 +142,15 @@ const faqItems: FaqItem[] = [
   {
     id: 'comecar',
     question: 'Como faço para começar?',
-    answer: 'Clique em "Criar conta" e configure sua primeira turma em poucos minutos.',
+    answer: (
+      <>
+        Clique em{' '}
+        <Link to="/criar-conta" className="pro-siga__inline-link">
+          Criar conta
+        </Link>{' '}
+        e configure sua primeira turma em poucos minutos.
+      </>
+    ),
   },
 ];
 
@@ -153,8 +161,8 @@ const LandingPage: FC = () => {
     <div className="pro-siga">
       <header className="pro-siga__header">
         <div className="pro-siga__brand">
-          <img src={logoMark} alt="Pro Siga" className="pro-siga__logo-mark" />
-          <span className="pro-siga__wordmark">Pro Siga</span>
+          <img src={logoMark} alt="ProSiga" className="pro-siga__logo-mark" />
+          <span className="pro-siga__wordmark">ProSiga</span>
         </div>
         <nav className="pro-siga__nav" aria-label="Navegação principal">
           <div className="pro-siga__nav-links">
@@ -188,7 +196,7 @@ const LandingPage: FC = () => {
             <Mascot
               variant="confused"
               className="pro-siga__mascot"
-              title="Mascote do Pro Siga cercado por interrogações, representando dúvidas do dia a dia acadêmico"
+              title="Mascote do ProSiga cercado por interrogações, representando dúvidas do dia a dia acadêmico"
             />
           </div>
           <div className="pro-siga__hero-copy">
@@ -196,7 +204,7 @@ const LandingPage: FC = () => {
               Feito para <em>o aluno</em> e para <em>o professor</em>
             </h1>
             <p>
-              O Pro Siga organiza tarefas, recados e atualizações da rotina acadêmica em um
+              O ProSiga organiza tarefas, recados e atualizações da rotina acadêmica em um
               único lugar, com acesso simples para quem ensina e para quem aprende.
             </p>
             <Link to="criar-conta" className="pro-siga__btn pro-siga__btn--primary" style={{ textDecoration: 'none'}}>
@@ -211,7 +219,7 @@ const LandingPage: FC = () => {
               Aprovado por quem ensina e por quem aprende
             </h2>
             <p className="pro-siga__trust-sub">
-              Escolas de todos os tamanhos usam o Pro Siga para simplificar a rotina de professores,
+              Escolas de todos os tamanhos usam o ProSiga para simplificar a rotina de professores,
               alunos e famílias.
             </p>
           </div>
@@ -248,7 +256,7 @@ const LandingPage: FC = () => {
             Tudo o que a rotina escolar precisa, em um só lugar
           </h2>
           <p className="pro-siga__section-sub">
-            Recursos pensados para simplificar a comunicação entre escola, professores e famílias.
+            Recursos pensados para simplificar a comunicação entre escola, professores, alunos e famílias.
           </p>
           <div className="pro-siga__feature-grid">
             {features.map((feature) => (
@@ -265,7 +273,7 @@ const LandingPage: FC = () => {
           <h2 id="pro-siga-steps-title" className="pro-siga__section-heading">
             Como funciona
           </h2>
-          <p className="pro-siga__section-sub">Três passos para colocar a sua turma no Pro Siga.</p>
+          <p className="pro-siga__section-sub">Três passos para colocar a sua turma no ProSiga.</p>
           <ol className="pro-siga__steps-list">
             {steps.map((step, index) => (
               <li key={step.id} className="pro-siga__step">
@@ -293,7 +301,7 @@ const LandingPage: FC = () => {
               <Mascot
                 variant="teacher"
                 className="pro-siga__mascot"
-                title="Mascote do Pro Siga na versão do professor, segurando anotações"
+                title="Mascote do ProSiga na versão do professor, segurando anotações"
               />
               <h3>O professor</h3>
               <p>Organiza conteúdos, acompanha a turma e simplifica a rotina acadêmica.</p>
@@ -302,7 +310,7 @@ const LandingPage: FC = () => {
               <Mascot
                 variant="happy"
                 className="pro-siga__mascot"
-                title="Mascote do Pro Siga na versão do aluno, com uma notificação no celular"
+                title="Mascote do ProSiga na versão do aluno, com uma notificação no celular"
               />
               <h3>O aluno</h3>
               <p>Recebe avisos, acompanha informações importantes e se mantém conectado.</p>
@@ -370,7 +378,7 @@ const LandingPage: FC = () => {
           <Mascot
             variant="happy"
             className="pro-siga__mascot pro-siga__final-cta-mascot"
-            title="Mascote do Pro Siga acenando, convidando para criar uma conta"
+            title="Mascote do ProSiga acenando, convidando para criar uma conta"
           />
         </section>
       </main>
@@ -379,8 +387,8 @@ const LandingPage: FC = () => {
         <div className="pro-siga__footer-inner">
           <div className="pro-siga__footer-col pro-siga__footer-brand-col">
             <div className="pro-siga__footer-brand">
-              <img src={logoMark} alt="Pro Siga" className="pro-siga__logo-mark pro-siga__logo-mark--light" />
-              <span className="pro-siga__wordmark pro-siga__wordmark--light">Pro Siga</span>
+              <img src={logoMark} alt="ProSiga" className="pro-siga__logo-mark pro-siga__logo-mark--light" />
+              <span className="pro-siga__wordmark pro-siga__wordmark--light">ProSiga</span>
             </div>
             <p className="pro-siga__footer-tagline">
               A rotina acadêmica organizada para quem ensina e para quem aprende.
@@ -399,7 +407,7 @@ const LandingPage: FC = () => {
           </div>
         </div>
         <p className="pro-siga__footer-copy">
-          &copy; {new Date().getFullYear()} Pro Siga. Todos os direitos reservados.
+          &copy; {new Date().getFullYear()} ProSiga. Todos os direitos reservados.
         </p>
       </footer>
     </div>
